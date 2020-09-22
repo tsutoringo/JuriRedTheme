@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Juri Red Theme for Nyobiko",
+  "description": "N予備校のテーマ拡張機能です",
+  "permissions": [
+    "https://www.nnn.ed.nico/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "https://www.nnn.ed.nico/courses/*/chapters/*",
+        "https://www.nnn.ed.nico/contents/courses/*/chapters/*/*/*"
+      ],
+      "js": [
+        "js/content-script.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "version": "0.1.2",
+  "content_security_policy": "script-src 'self' ; object-src 'self'"
+}
